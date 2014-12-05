@@ -78,6 +78,15 @@ rm -rf %{buildroot}
 # >> files
 # << files
 
+%files maliit-keyboard
+%defattr(-,root,root,-)
+%{_bindir}/maliit-keyboard-benchmark
+%{_libdir}/maliit/plugins/libmaliit-keyboard-plugin.so
+%{_datadir}/maliit/plugins/languages
+%{_datadir}/maliit/plugins/org/maliit
+# >> files
+# << files
+
 %files doc
 %defattr(-,root,root,-)
 %{_docdir}/maliit-plugins/
