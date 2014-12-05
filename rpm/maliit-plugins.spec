@@ -55,7 +55,7 @@ unset LD_AS_NEEDED
 # >> build pre
 # << build pre
 
-%qmake5 CONFIG+=disable-maliit-keyboard
+#%qmake5 CONFIG+=disable-maliit-keyboard
 
 make %{?jobs:-j%jobs}
 
