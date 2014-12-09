@@ -35,7 +35,6 @@ Reference inputmethod plugins, such as the Maliit Keyboard
 Summary:    Maliit keyboard plugin
 Group:      System/GUI/Other
 Requires:   presage
-Requires:   libpresage
 Requires:   presage-data
 Requires:   dbus-presage
 Requires:   %{name} = %{version}-%{release}
