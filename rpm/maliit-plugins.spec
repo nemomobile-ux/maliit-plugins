@@ -25,6 +25,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(hunspell)
 BuildRequires:  doxygen
+BuildRequires:  libpresage-devel
 
 %description
 Reference inputmethod plugins, such as the Maliit Keyboard
@@ -33,6 +34,10 @@ Reference inputmethod plugins, such as the Maliit Keyboard
 %package maliit-keyboard
 Summary:    Maliit keyboard plugin
 Group:      System/GUI/Other
+Requires:   presage
+Requires:   libpresage
+Requires:   presage-data
+Requires:   dbus-presage
 Requires:   %{name} = %{version}-%{release}
 
 %description maliit-keyboard
