@@ -61,7 +61,7 @@ unset LD_AS_NEEDED
 # >> build pre
 # << build pre
 
-%qmake5
+%qmake5 CONFIG=enable-presage
 
 make %{?jobs:-j%jobs}
 
