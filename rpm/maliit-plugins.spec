@@ -15,6 +15,7 @@ Group:      System/GUI/Other
 License:    LGPLv2.1
 URL:        http://gitorious.org/maliit/maliit-plugins
 Source0:    %{name}-%{version}.tar.bz2
+Source1:    server.conf
 Requires:   qt5-qtdeclarative-import-qtquick2plugin
 Requires:   qt5-qtsvg-plugin-imageformat-svg
 Requires:   hunspell
@@ -73,6 +74,7 @@ rm -rf %{buildroot}
 # >> install pre
 # << install pre
 %qmake_install
+cp %{SOURCE1} %{buildroot}/etc/xdg/maliit.org/server.conf
 
 # >> install post
 # << install post
