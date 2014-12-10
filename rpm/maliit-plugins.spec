@@ -93,6 +93,7 @@ cp %{SOURCE1} %{buildroot}/etc/xdg/maliit.org/server.conf
 %{_libdir}/maliit/plugins/libmaliit-keyboard-plugin.so
 %{_datadir}/maliit/plugins/languages
 %{_datadir}/maliit/plugins/org/maliit
+/etc/xdg/maliit.org/server.conf
 # >> files
 # << files
 
