@@ -74,6 +74,7 @@ rm -rf %{buildroot}
 # >> install pre
 # << install pre
 %qmake_install
+mkdir -p %{buildroot}/etc/xdg/maliit.org
 cp %{SOURCE1} %{buildroot}/etc/xdg/maliit.org/server.conf
 
 # >> install post
