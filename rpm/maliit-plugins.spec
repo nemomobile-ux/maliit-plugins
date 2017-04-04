@@ -15,18 +15,15 @@ Group:      System/GUI/Other
 License:    LGPLv2.1
 URL:        http://gitorious.org/maliit/maliit-plugins
 Source0:    %{name}-%{version}.tar.bz2
-Source1:    server.conf
+#Source1:    server.conf
 Requires:   qt5-qtdeclarative-import-qtquick2plugin
 Requires:   qt5-qtsvg-plugin-imageformat-svg
-Requires:   hunspell
 BuildRequires:  pkgconfig(maliit-plugins)
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Test)
-BuildRequires:  pkgconfig(hunspell)
 BuildRequires:  doxygen
-BuildRequires:  libpresage-devel
 
 %description
 Reference inputmethod plugins, such as the Maliit Keyboard
@@ -35,9 +32,6 @@ Reference inputmethod plugins, such as the Maliit Keyboard
 %package maliit-keyboard
 Summary:    Maliit keyboard plugin
 Group:      System/GUI/Other
-Requires:   presage
-Requires:   presage-data
-Requires:   dbus-presage
 Requires:   %{name} = %{version}-%{release}
 
 %description maliit-keyboard
@@ -62,7 +56,9 @@ unset LD_AS_NEEDED
 # >> build pre
 # << build pre
 
-%qmake5 CONFIG+=enable-presage
+##%%qmake5 CONFIG+=enable-presage
+%qmake5 CONFIG+=disable-maliit-keyboard
+
 
 make %{?jobs:-j%jobs}
 
@@ -74,8 +70,8 @@ rm -rf %{buildroot}
 # >> install pre
 # << install pre
 %qmake_install
-mkdir -p %{buildroot}/etc/xdg/maliit.org
-cp %{SOURCE1} %{buildroot}/etc/xdg/maliit.org/server.conf
+#mkdir -p %{buildroot}/etc/xdg/maliit.org
+#cp %{SOURCE1} %{buildroot}/etc/xdg/maliit.org/server.conf
 
 # >> install post
 # << install post
@@ -87,13 +83,13 @@ cp %{SOURCE1} %{buildroot}/etc/xdg/maliit.org/server.conf
 # >> files
 # << files
 
-%files maliit-keyboard
-%defattr(-,root,root,-)
-%{_bindir}/maliit-keyboard-benchmark
-%{_libdir}/maliit/plugins/libmaliit-keyboard-plugin.so
-%{_datadir}/maliit/plugins/languages
-%{_datadir}/maliit/plugins/org/maliit
-/etc/xdg/maliit.org/server.conf
+##%%files maliit-keyboard
+##%%defattr(-,root,root,-)
+##%%{_bindir}/maliit-keyboard-benchmark
+##%%{_libdir}/maliit/plugins/libmaliit-keyboard-plugin.so
+##%%{_datadir}/maliit/plugins/languages
+##%%{_datadir}/maliit/plugins/org/maliit
+#/etc/xdg/maliit.org/server.conf
 # >> files
 # << files
 
