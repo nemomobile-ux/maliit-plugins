@@ -56,7 +56,7 @@ unset LD_AS_NEEDED
 # >> build pre
 # << build pre
 
-##%%qmake5 CONFIG+=enable-presage
+%qmake5 CONFIG+=enable-presage
 %qmake5 CONFIG+=disable-maliit-keyboard
 
 
@@ -70,8 +70,6 @@ rm -rf %{buildroot}
 # >> install pre
 # << install pre
 %qmake_install
-#mkdir -p %{buildroot}/etc/xdg/maliit.org
-#cp %{SOURCE1} %{buildroot}/etc/xdg/maliit.org/server.conf
 
 # >> install post
 # << install post
@@ -80,16 +78,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_libdir}/maliit/plugins/nemo-keyboard.qml
 %{_datadir}/maliit/plugins/org/nemomobile
-# >> files
-# << files
-
-##%%files maliit-keyboard
-##%%defattr(-,root,root,-)
-##%%{_bindir}/maliit-keyboard-benchmark
-##%%{_libdir}/maliit/plugins/libmaliit-keyboard-plugin.so
-##%%{_datadir}/maliit/plugins/languages
-##%%{_datadir}/maliit/plugins/org/maliit
-#/etc/xdg/maliit.org/server.conf
 # >> files
 # << files
 
