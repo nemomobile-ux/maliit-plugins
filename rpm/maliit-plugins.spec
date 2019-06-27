@@ -7,6 +7,7 @@ License:    LGPLv2.1
 URL:        https://github.com/nemomobile-ux/maliit-plugins
 Source0:    %{name}-%{version}.tar.bz2
 
+Requires:   maliit-framework-wayland
 Requires:   qt5-qtdeclarative-import-qtquick2plugin
 Requires:   qt5-qtsvg-plugin-imageformat-svg
 BuildRequires:  pkgconfig(maliit-plugins)
